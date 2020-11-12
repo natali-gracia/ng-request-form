@@ -1,8 +1,8 @@
 <div class="container">
-  <h1>Data request form</h1>
-  <form>
-    <app-calendar></app-calendar>
+  <form [formGroup]="form" (ngSubmit)="getReport()">
+    <h1>Data request form</h1>
+    <app-calendar [formParent]="form"></app-calendar>
     <app-devices></app-devices>
+    <button mat-stroked-button type="submit">Generate report</button>
   </form>
-  <button mat-stroked-button>Generate report</button>
 </div>
