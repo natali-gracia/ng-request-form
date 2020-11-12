@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +13,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      date: new FormControl('')
+      date: new FormControl('', Validators.required),
+      device: new FormControl('', Validators.required)
     })
   }
 
   getReport() {
-    console.log('Report generated!', this.form)
+    const formData = {...this.form.value}
+    console.log('Form Data: ', formData);
   }
-
 }

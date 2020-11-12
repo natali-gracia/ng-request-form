@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 interface Device {
   value: string;
@@ -11,6 +12,8 @@ interface Device {
   styleUrls: ['./devices.component.css']
 })
 export class DevicesComponent implements OnInit {
+
+  @Input() formParent!: FormGroup
 
   selectedValue: string = ''
 
