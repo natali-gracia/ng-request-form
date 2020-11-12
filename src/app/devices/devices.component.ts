@@ -20,8 +20,8 @@ export class DevicesComponent implements OnInit {
   constructor() { }
 
   devices: Device[] = [
-    {value: 'temperature', viewValue: 'Temperature Device'},
-    {value: 'humidity', viewValue: 'Humidity Device'}
+    {value: 'temperature', viewValue: 'Temperature measurement'},
+    {value: 'humidity', viewValue: 'Humidity measurement'}
   ]
 
   ngOnInit(): void {
