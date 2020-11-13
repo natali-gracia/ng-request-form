@@ -1,5 +1,5 @@
 <div [formGroup]="formParent">
-  <mat-form-field appearance="fill">
+  <mat-form-field>
     <mat-label>Select device</mat-label>
     <mat-select formControlName="device">
       <mat-option *ngFor="let device of devices" [value]="device.value">

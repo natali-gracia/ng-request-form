@@ -10,8 +10,6 @@ export class CalendarComponent implements OnInit {
 
   @Input() formParent!: FormGroup
 
-  selectedDate: string = ''
-
   constructor() { }
 
   ngOnInit(): void {

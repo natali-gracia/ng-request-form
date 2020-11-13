@@ -8,8 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AppComponent implements OnInit {  
   
-  form!: FormGroup 
-  selectedDate: string = ''
+  form!: FormGroup
 
   ngOnInit() {
     this.form = new FormGroup({

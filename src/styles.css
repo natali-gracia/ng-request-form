@@ -4,5 +4,11 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mat-form-field {
-    width: 300px;
+    width: 400px;
+}
+h1 {
+    padding-bottom: 8px;
+}
+button {
+    margin-top: 10px !important;
 }
