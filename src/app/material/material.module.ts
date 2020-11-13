@@ -4,6 +4,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatNativeDateModule,
+  NgxMatTimepickerModule
+} from '@angular-material-components/datetime-picker';
 
 
 @NgModule({
@@ -13,7 +18,10 @@ import {MatInputModule} from '@angular/material/input';
     MatNativeDateModule,
     MatRippleModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    NgxMatDatetimePickerModule,
+    NgxMatNativeDateModule,
+    NgxMatTimepickerModule
   ]
 })
 

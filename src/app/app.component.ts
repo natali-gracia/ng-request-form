@@ -13,7 +13,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      date: new FormControl('', Validators.required),
+      dateRange: new FormGroup({
+        start: new FormControl('', Validators.required),
+        end: new FormControl('', Validators.required),
+      }),
       device: new FormControl('', Validators.required)
     })
   }
