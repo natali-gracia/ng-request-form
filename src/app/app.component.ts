@@ -20,5 +20,6 @@ export class AppComponent implements OnInit {
   getReport() {
     const formData = {...this.form.value}
     console.log('Form Data: ', formData);
+    location.href = "http://localhost:3000/download-report"
   }
 }
