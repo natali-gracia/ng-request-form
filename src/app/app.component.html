@@ -1,8 +1,14 @@
 <div class="container">
-  <form [formGroup]="form" (ngSubmit)="getReport()">
+  <form [formGroup]="form" (ngSubmit)="getReport()" [ngClass]="{ invisible: !reportView }">
     <h1>Data request form</h1>
     <app-calendar [formParent]="form"></app-calendar>
     <app-devices [formParent]="form"></app-devices>
     <button mat-stroked-button type="submit" [disabled]="form.invalid">Generate report</button>
   </form>
+  <div [ngClass]="{ invisible: reportView }">
+    <h1>Form Data</h1>
+    {{ formData | json }}
+    <h1>Report</h1>
+    {{ report | json }}
+  </div>
 </div>

@@ -3,3 +3,6 @@
     width: 600px;
     margin: 0 auto;
 }
+.invisible {
+    display: none;
+}
