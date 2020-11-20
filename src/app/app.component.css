@@ -6,3 +6,6 @@
 .invisible {
     display: none;
 }
+.error {
+    color: red;
+}

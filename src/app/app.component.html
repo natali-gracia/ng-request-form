@@ -1,14 +1,29 @@
 <div class="container">
-  <form [formGroup]="form" (ngSubmit)="getReport()" [ngClass]="{ invisible: !reportView }">
+  <form [formGroup]="form" (ngSubmit)="getReport()" [ngClass]="{ invisible: reportView }">
     <h1>Data request form</h1>
     <app-calendar [formParent]="form"></app-calendar>
     <app-devices [formParent]="form"></app-devices>
     <button mat-stroked-button type="submit" [disabled]="form.invalid">Generate report</button>
   </form>
-  <div [ngClass]="{ invisible: reportView }">
-    <h1>Form Data</h1>
-    {{ formData | json }}
-    <h1>Report</h1>
-    {{ report | json }}
-  </div>
+    <div [class.invisible]="!reportView">
+      <h1>Report</h1>
+      <p *ngIf="error, else reportBlock" class="error">{{ error }}</p>
+      <ng-template #reportBlock>
+        <div *ngIf="!loading; else loadingBlock">
+          <div *ngIf="report.length, else emptyReport">
+            <div *ngFor="let item of report">
+              <span>Title{{ item.id}}: {{ item.title }}. Status: {{ item.complited ? 'complited' : 'in track' }}</span>
+              <button mat-stroked-button (click)="removeItem(item.id)">Remove</button>
+              <button mat-stroked-button (click)="modifyItem(item.id)">Modify</button>
+            </div>
+          </div>
+          <ng-template #emptyReport>
+            <p>Report is empty</p>
+          </ng-template>
+        </div>
+        <ng-template #loadingBlock>
+          <p>Loading...</p>
+        </ng-template>
+      </ng-template>
+    </div>    
 </div>
