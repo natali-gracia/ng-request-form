@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   form!: FormGroup
   report: RequestData[] = []
 
-  constructor(private ReportService: ReportService) {}
+  constructor(private reportService: ReportService) {}
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -24,14 +24,12 @@ export class AppComponent implements OnInit {
   getReport() {
 
     const requestData = {
-      startDate: this.form.value.date.startDate._d,
-      endDate: this.form.value.date.endDate._d,
+      startDate: new Date(this.form.value.date.startDate._d).getTime(),
+      endDate: new Date(this.form.value.date.endDate._d).getTime(),
       deviceType: this.form.value.device
     }
 
-    console.log('requestData: ', requestData);
-
-    this.ReportService.fetchReport(requestData)
+    this.reportService.fetchReport(requestData)
       .subscribe(report => {
           this.report = report
           console.log('Response: ', this.report)

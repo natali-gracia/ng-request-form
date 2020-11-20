@@ -5,8 +5,8 @@ import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 export interface RequestData {
-  startDate: string,
-  endDate: string,
+  startDate: number,
+  endDate: number,
   deviceType: string
 }
 
@@ -21,11 +21,14 @@ export class ReportService {
   fetchReport(requestData: RequestData): Observable<RequestData[]> {
 
     const params = new HttpParams()
-      .append('startDate', requestData.startDate)
-      .append('endDate', requestData.endDate)
+      .append('startDate', (requestData.startDate).toString())
+      .append('endDate', (requestData.endDate).toString())
       .append('deviceType', requestData.deviceType)
 
-    return this.http.get<RequestData[]>('https://jsonplaceholder.typicode.com/todos', {params})
+    return this.http.get<RequestData[]>('/api/generate-report', {
+      params,
+      responseType: 'text' as 'json'
+    })
       .pipe(
         catchError(
           error => {
@@ -34,7 +37,5 @@ export class ReportService {
         })
       )
   }
-
-
 
   }
