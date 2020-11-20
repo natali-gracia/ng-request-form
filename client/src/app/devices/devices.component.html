@@ -1,0 +1,11 @@
+<div [formGroup]="formParent">
+  <mat-form-field>
+    <mat-label>Select device</mat-label>
+    <mat-select formControlName="device">
+      <mat-option *ngFor="let device of devices" [value]="device.value">
+        {{ device.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!-- <p> Selected device: {{ selectedValue }} </p> -->
+</div>
