@@ -1,21 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module';
-import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MaterialModule } from './material/material.module'
+import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material'
+import { HttpClientModule } from '@angular/common/http'
 
-import { AppComponent } from './app.component';
-import { CalendarComponent } from './calendar/calendar.component';
-import { DevicesComponent } from './devices/devices.component';
+import { AppComponent } from './app.component'
+import { CalendarComponent } from './calendar/calendar.component'
+import { DevicesComponent } from './devices/devices.component'
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CalendarComponent,
-    DevicesComponent
-  ],
+  declarations: [AppComponent, CalendarComponent, DevicesComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -23,9 +19,9 @@ import { DevicesComponent } from './devices/devices.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    NgxDaterangepickerMd.forRoot()
+    NgxDaterangepickerMd.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
