@@ -30,5 +30,6 @@ export class AppComponent implements OnInit {
       this.report = report
       console.log('Response: ', this.report)
     })
+    this.form.reset()
   }
 }
